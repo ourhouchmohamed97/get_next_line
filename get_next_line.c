@@ -95,6 +95,7 @@ char	*get_next_line(int fd)
 {
 	static char	*save_buffer;
 	char		*buffer;
+	int		i;
 
 	if (fd > OPEN_MAX || BUFFER_SIZE <= 0 || fd < 0 || read(fd, NULL, 0) < 0)
 		return (free(save_buffer), save_buffer = NULL);
