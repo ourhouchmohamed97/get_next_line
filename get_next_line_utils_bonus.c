@@ -59,7 +59,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!dest)
 		return (NULL);
 	start = dest;
-	// Save the start of dest bach mli n returni ykon lwl d dest machi lakhar
 	while (*s1)
 		*dest++ = *s1++;
 	while (*s2)
