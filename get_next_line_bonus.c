@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 static char	*fill_buffer(char *save_buffer, int fd)
 {
@@ -32,8 +29,6 @@ static char	*fill_buffer(char *save_buffer, int fd)
 			return (free(buffer), free(save_buffer), NULL);
 		buffer[len] = '\0';
 		temp = ft_strjoin(save_buffer, buffer);
-			// drna temp 7it n9dro n3ayto l gnl ktar mn mra
-		// fa dik saved_buffer ayb9a 3amar dikxi 3lach khasna nfreewah
 		if (!temp)
 			return (free(buffer), free(save_buffer), NULL);
 		free(save_buffer);
@@ -41,7 +36,6 @@ static char	*fill_buffer(char *save_buffer, int fd)
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
-	// If we reach here, it means no more lines to read
 	free(buffer);
 	return (save_buffer);
 }
